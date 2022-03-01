@@ -8,7 +8,7 @@ export default class FunctionQuery extends React.Component {
 
   async componentDidMount() {
     let getURL = window.location.protocol
-    +"//"+ window.location.host+`/`
+    +"//"+ window.location.host+`/function/myportal`
     console.log(getURL)
 
     await axios.post(getURL, 
