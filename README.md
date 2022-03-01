@@ -28,7 +28,7 @@ The homepage field must match the function name or custom domain you're using to
 
 Edit your React app's source code, and redeploy it:
 
-Edit ./react/public/index.html or ./react/src/App.js
+Edit `./react/public/index.html` or `./react/src/App.js`
 
 Then run:
 
