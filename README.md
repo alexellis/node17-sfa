@@ -2,7 +2,9 @@
 
 Single Function App with ReactJs
 
-Usage:
+Read the blog post here: [Hosting a React App with OpenFaaS](https://www.openfaas.com/blog/react-app/)
+
+## Usage
 
 ```bash
 # Change as required:

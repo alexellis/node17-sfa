@@ -4,6 +4,7 @@ ARG BUILDPLATFORM
 FROM --platform=${TARGETPLATFORM:-linux/amd64} ghcr.io/openfaas/of-watchdog:0.9.3 as watchdog
 
 FROM --platform=${TARGETPLATFORM:-linux/amd64} node:17-alpine as react
+ARG NODE_ENV
 
 WORKDIR /home/app/react
 
@@ -18,11 +19,12 @@ RUN npm install
 COPY function/react/src ./src
 COPY function/react/public ./public
 
-# Run a production build of the site
-RUN NODE_ENV=dev npm run build
+# Run a production or dev build of the site
+# pass --build-arg NODE_ENV=production for instance
+RUN echo ${NODE_ENV:-dev} && NODE_ENV=${NODE_ENV:-dev} npm run build
 
 # Remove node_modules to save copying it into the next layer later on.
-RUN rm -rf node_modules
+RUN rm -rf /home/app/react/node_modules
 
 FROM --platform=${TARGETPLATFORM:-linux/amd64} node:17-alpine as function
 
