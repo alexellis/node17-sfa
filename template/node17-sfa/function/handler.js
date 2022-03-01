@@ -6,7 +6,7 @@ module.exports = async (event, context) => {
   // React app.
   if(event.method == "GET" && event.path == "/") {
     return context
-    .headers({"Location": "/app/"})
+    .headers({"Location": "/function/myportal/app/"})
     .status(307)
     .succeed({})
   }
