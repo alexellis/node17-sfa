@@ -1,0 +1,11 @@
+language: node17-sfa
+fprocess: node index.js
+welcome_message: |
+  You've created a Single Function App (SFA) using Node.js for your function code
+  and React JS for the front-end.
+
+  The "react" subfolder hosts your ReactJS app, edit the files in src/ and 
+  work with its package.json within that sub-directory.
+
+  The root folder contains your function's handler.js file and its separate 
+  package.json file.
